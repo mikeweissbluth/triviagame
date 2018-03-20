@@ -12,15 +12,15 @@ $(document).ready (function(){
             "image": "hello world"
         }, 
         {
-            "question": "What is Homers favorite snack?",
-            "answers": ["Beer", "Donuts", "Salad", "Hummus"],
-            "correctAnswer": "Donuts",
-        }
+            "question": "What is the typical height and weight of a male Newf?",
+            "answers": ["4ft, 100lbs/45kg", "4.5feet, 130lbs/59kg", "5ft, 160lbs/70kg", "yes, all of the above"],
+            "correctAnswer": "yes, all of the above",
+        },
         {
-            "question": "What is Homers favorite snack?",
-            "answers": ["Beer", "Donuts", "Salad", "Hummus"],
-            "correctAnswer": "Donuts",
-        }
+            "question": "Are Newfies the best swimming breed?",
+            "answers": ["yes", "no", "not sure",],
+            "correctAnswer": "yes",
+        },
         {
             "question": "What is Homers favorite snack?",
             "answers": ["Beer", "Donuts", "Salad", "Hummus"],
@@ -58,6 +58,7 @@ $(document).ready (function(){
     $('.js-start').on('click', function(){
         //execute instructions
         startGame();
+        timer();
     });
 
     //click stop button to see score
