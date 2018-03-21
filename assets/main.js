@@ -53,6 +53,7 @@ $(document).ready (function(){
         }
       }
 
+      let currentTime=30
 
     function startGame(){
         // console.log('game');
@@ -67,17 +68,20 @@ $(document).ready (function(){
             $('.js-questions').append('<br><hr>');
         }
 
-        // Add timer here
+        // Add hide timer here
         $(".js-start").hide();
     }
-
-
-
-    function stopGame(){
-        for (let i=5; i < questions.length; i++){
-            
-        }
+        // add timer here
+    function timer(){
+        $('.timer').text(currentTime);
+        setInterval(function(){
+            currentTime-=1;
+            $('.timer').text(currentTime);
+        }, 1000);
     }
+
+ 
+    
 
 
     //events
