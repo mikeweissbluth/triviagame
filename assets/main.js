@@ -30,6 +30,30 @@ $(document).ready (function(){
     let userAnswers = [];
 
     //funtions
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+      }
+  
+      //  The decrement function.
+      function decrement() {
+  
+        //  Decrease number by one.
+        number--;
+  
+        //  Show the number in the #show-number tag.
+        $("#show-number").html("<h2>" + number + "</h2>");
+  
+  
+        //  Once number hits zero...
+        if (number === 0) {
+  
+          //  ...run the stop function.
+          stop();
+        }
+      }
+
+
     function startGame(){
         // console.log('game');
         // populate questios div
@@ -42,7 +66,12 @@ $(document).ready (function(){
             }
             $('.js-questions').append('<br><hr>');
         }
+
+        // Add timer here
+        $(".js-start").hide();
     }
+
+
 
     function stopGame(){
         for (let i=5; i < questions.length; i++){
@@ -60,6 +89,9 @@ $(document).ready (function(){
         startGame();
         timer();
     });
+
+
+    
 
     //click stop button to see score
 
