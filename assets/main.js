@@ -18,12 +18,12 @@ $(document).ready (function(){
         },
         {
             "question": "Are Newfies the best swimming breed?",
-            "answers": ["yes", "no", "not sure",],
+            "answers": ["yes", "no", "not sure"],
             "correctAnswer": "yes",
         },
         {
-            "question": "What is Homers favorite snack?",
-            "answers": ["Beer", "Donuts", "Salad", "Hummus"],
+            "question": "What is a Newfie's favorite snack?",
+            "answers": ["Beer", "Donuts", "Salad", "Hummus", "yes"],
             "correctAnswer": "Donuts",
         }
     ];
