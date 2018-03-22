@@ -10,6 +10,7 @@ $(document).ready (function(){
             "answers": ["pitbull", "kangal", "Newfoundland"],
             "correctAnswer":"Newfoundland",
             "image": "hello world"
+            
         }, 
         {
             "question": "What is the typical height and weight of a male Newf?",
@@ -53,20 +54,27 @@ $(document).ready (function(){
         }
       }
 
-      let currentTime=30
+      let currentTime=5
 
     function startGame(){
         // console.log('game');
         // populate questios div
         for (let i=0; i<questions.length; i++) {
             $('.js-questions').append('<p>' + questions[i].question + '</p>');
+
             // loop through answers
+
             for (let j=0; j < questions[i].answers.length; j++) {
                 console.log(questions[i].answers[j]);
                 $('.js-questions').append('<input type="radio" value= "' + questions[i].answers[j] + '" name="a' + i + '">' + questions[i].answers[j] +'</input>');
             }
             $('.js-questions').append('<br><hr>');
         }
+        let button = $("<button>");
+        button.attr("id","submit");
+        button.append("End")
+        $(".js-submit").append(button)
+
 
         // Add hide timer here
         $(".js-start").hide();
@@ -75,14 +83,14 @@ $(document).ready (function(){
     function timer(){
         $('.timer').text(currentTime);
         setInterval(function(){
-            currentTime-=1;
+           if(currentTime >0) {
+               currentTime-=1;
             $('.timer').text(currentTime);
+        }
         }, 1000);
+        
+
     }
-
- 
-    
-
 
     //events
     
@@ -95,10 +103,19 @@ $(document).ready (function(){
     });
 
 
-    
-
     //click stop button to see score
 
+    $('.js-submit').on('click',"#submit", function(){
+        //execute instructions
+       console.log("click!!")
+       
+    });
+
+    function checkanswers(){
+    
+    userAnswers.push($("input:radio[name=a0]:checked").val())
+        console.log(userAnswers)
+}
     // $('.js')
     // timer runs out to end game and show score
 
